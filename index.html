@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bernardus Jonathan Aditya</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: #0b1f3a;
+      color: white;
+    }
+
+    /* BACKGROUND */
+    header{
+      width:100%;
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,40,80,0.6), rgba(0,20,40,0.7)),
+      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    /* NAVBAR */
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#7fdcff;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#7fdcff;
+    }
+
+    /* HERO */
+    .hero{
+      height:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h1{
+      font-size:70px;
+      color:#ffffff;
+      text-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .hero h2{
+      font-size:35px;
+      margin-top:10px;
+      color:#7fdcff;
+    }
+
+    .hero p{
+      margin-top:15px;
+      font-size:22px;
+      color:#d9f6ff;
+      font-style:italic;
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:50px;
+      color:#7fdcff;
+    }
+
+    /* PROFIL */
+    .profile-container{
+      display:flex;
+      align-items:center;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .profile-img img{
+      width:300px;
+      height:300px;
+      object-fit:cover;
+      border-radius:20px;
+      border:4px solid #7fdcff;
+      box-shadow:0 0 20px rgba(127,220,255,0.5);
+    }
+
+    .profile-text{
+      flex:1;
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    .social{
+      margin-top:20px;
+      padding:20px;
+      background:rgba(255,255,255,0.08);
+      border-radius:15px;
+    }
+
+    /* GALERI */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .photo-box{
+      height:220px;
+      border:3px dashed #7fdcff;
+      border-radius:20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:20px;
+      color:#bdefff;
+      background:rgba(255,255,255,0.05);
+      transition:0.3s;
+    }
+
+    .photo-box:hover{
+      transform:scale(1.03);
+      background:rgba(127,220,255,0.1);
+    }
+
+    /* GEAR */
+    .gear-box{
+      display:flex;
+      gap:40px;
+      align-items:center;
+      flex-wrap:wrap;
+      background:rgba(255,255,255,0.06);
+      padding:30px;
+      border-radius:25px;
+    }
+
+    .gear-box img{
+      width:350px;
+      border-radius:20px;
+      border:3px solid #7fdcff;
+    }
+
+    .gear-text h2{
+      color:#7fdcff;
+      margin-bottom:15px;
+      font-size:35px;
+    }
+
+    .gear-text h3{
+      margin-bottom:15px;
+      font-size:28px;
+    }
+
+    .gear-text p{
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    /* CONTACT */
+    .contact{
+      text-align:center;
+      background:linear-gradient(to right,#003366,#005b96);
+      border-radius:30px;
+      padding:60px;
+    }
+
+    .contact h2{
+      font-size:45px;
+      margin-bottom:20px;
+      color:#7fdcff;
+    }
+
+    .contact p{
+      font-size:22px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#041321;
+      margin-top:50px;
+      color:#aaa;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .hero h2{
+        font-size:25px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .profile-container{
+        flex-direction:column;
+      }
+
+      .gear-box{
+        flex-direction:column;
+      }
+
+      .gear-box img{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">CEO gacoan</div>
+
+    <ul>
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#fotografi">Hasil Fotografi</a></li>
+      <li><a href="#gear">Gear</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- BERANDA -->
+  <header id="beranda">
+    <div class="hero">
+      <h1>Welcome to my web</h1>
+      <h2>Bernardus Jonathan Aditya</h2>
+      <p>"ahh pria limo itu lagi..."</p>
+    </div>
+  </header>
+
+  <!-- PROFIL -->
+  <section id="profil">
+    <h1 class="title">Profil</h1>
+
+    <div class="profile-container">
+
+      <div class="profile-img">
+        <img src="IMG_20260525_013828_157.jpg" alt="Foto Profil">
+      </div>
+
+      <div class="profile-text">
+        <p>
+          Halo, aku Bernardus Jonathan Aditya, biasa dipanggil nengok,
+          aku berusia 15 tahun, aku lahir di sini tanggal 17 agustus,
+          kadang hobi sepedaan kalo niat, kadang foto foto pas niat,
+          kalo main gim pasti niat, tapi tujuannya satu, yaitu mendekatkan diri kepada Tuhan.
+        </p>
+
+        <br>
+
+        <p>
+          Motto saya adalah
+          <b>"berproseslah tanpa sepengetahuan orang lain"</b>,
+          jadi jangan lupa follow akun ig biar bisa liat hasil-haisl foto yang lain.
+        </p>
+
+        <div class="social">
+          <p><b>Instagram :</b> @8ernard.b11r</p>
+          <p><b>TikTok :</b> @bernard.ajaa</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HASIL FOTOGRAFI -->
+  <section id="fotografi">
+    <h1 class="title">Hasil Fotografi</h1>
+
+    <div class="gallery">
+      <div class="photo-box"><img src="gambar_1.jpeg" alt="" width="333"></div>
+      <div class="photo-box"><img src="gambar_2.JPG" alt="" width="333"></div>
+      <div class="photo-box"><img src="gambar_3.JPG" alt="" width="333"></div>
+      <div class="photo-box"><img src="gambar_4.JPG" alt="" width="333"></div>
+      <div class="photo-box"><img src="gambar_5.JPG" alt="" width="333"></div>
+      <div class="photo-box"><img src="gambar_6.jpg" alt="" width="333"></div>
+    </div>
+  </section>
+
+  <!-- GEAR -->
+  <section id="gear">
+    <h1 class="title">Gear yang digunakan:</h1>
+
+    <div class="gear-box">
+
+      <img src="DSC06672.jpg" alt="">
+
+      <div class="gear-text">
+        <h3>Nikon D90 18-55mm AF-S</h3>
+
+        <p>
+          Kamera Nikon yang cukup legendaris yang dirilis pada tahun 2008
+          yang masih menjadi andalanku untuk memotret dimanapun dan kapanpun,
+          menggunakan sensor 12MP dan menggunakan 11 titik autofocus.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact">
+      <h2>Contact Us</h2>
+
+      <p>Nomor Telepon : 08xxxxxxxxxx</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Bernardus Jonathan Aditya | Ocean Blue Theme
+  </footer>
+
+</body>
+</html>
